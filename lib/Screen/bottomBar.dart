@@ -1,9 +1,10 @@
 
-
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
-class bottomBar extends StatefulWidget{
+import 'HomeScreen.dart';
+
+class BottomBar extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
       return _bottomBarState();
@@ -12,10 +13,10 @@ class bottomBar extends StatefulWidget{
   
 }
 
-class _bottomBarState extends State<bottomBar>{
-  int _selectIndex = 3;
+class _bottomBarState extends State<BottomBar>{
+  int _selectIndex = 0;
   static final List<Widget> _widgetOption = <Widget>[
-    const Text("Home"),
+    HomeScreen(),
     const Text("Ticket"),
     const Text("Search"),
     const Text("Person")
@@ -29,7 +30,7 @@ class _bottomBarState extends State<bottomBar>{
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(title: const Text("Ticket Booking") , centerTitle: true),
+        // appBar: AppBar(title: const Text("Ticket Booking") , centerTitle: true),
         body: Center(child: _widgetOption[_selectIndex]),
         bottomNavigationBar:BottomNavigationBar(
           currentIndex: _selectIndex,
